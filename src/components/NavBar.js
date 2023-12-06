@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Logo from "./Logo";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import {
   GithubIcon,
   Instagram,
@@ -12,7 +13,6 @@ import {
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
-  console.log(router);
   return (
     <Link href={href} className={`${className} relative group`}>
       {title}
@@ -42,18 +42,42 @@ const NavBar = () => {
         <CustomLink href="/articles" title="Articles" className="ml-4" />
       </nav>
       <nav className="flex items-center justify-center flex-wrap">
-        <a href="https://twitter.com" target="_blank">
+        <motion.a
+          href="https://twitter.com/monojittewari"
+          target="_blank"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-6 mr-3"
+        >
           <TwitterIcon />
-        </a>
-        <a href="http://github.com/flowerc9" target="_blank">
+        </motion.a>
+        <motion.a
+          href="http://github.com/flowerc9"
+          target="_blank"
+          className="w-6 mx-3"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+        >
           <GithubIcon />
-        </a>
-        <a href="/" target="_blank">
+        </motion.a>
+        <motion.a
+          href="https://linkedin.com/in/monojit-tewari/"
+          target="_blank"
+          className="w-6 mx-3"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+        >
           <LinkedInIcon />
-        </a>
-        <a href="/" target="_blank">
+        </motion.a>
+        <motion.a
+          href="https://instagram.com/mj_ngx"
+          target="_blank"
+          className="w-6 ml-3"
+          whileHover={{ y: -2 }}
+          whileTap={{ scale: 0.9 }}
+        >
           <Instagram />
-        </a>
+        </motion.a>
       </nav>
       <div
         className="absolute left-[50%] top-2 
